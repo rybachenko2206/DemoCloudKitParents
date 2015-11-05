@@ -7,25 +7,44 @@
 //
 
 import UIKit
+import CloudKit
+import CoreData
+
 
 class ParentsViewController: UITableViewController {
-
+    
+    //MARK: Outlets
+    @IBOutlet var addBarButtonItem: UIBarButtonItem!
+    
+    
+    //MARK: Properties
+//    var parents
+    
+    
+    //MARK: Overriden functions
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.title = "Parents"
+        
+        self.navigationItem.rightBarButtonItem = self.addBarButtonItem
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    // MARK: Action functions
+    
+    @IBAction func createParentTapped(sender: AnyObject) {
+    }
+    
+    
 
-    // MARK: - Table view data source
+    // MARK: Delegated functions:
+    // MARK: -UITableViewDataSource
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections

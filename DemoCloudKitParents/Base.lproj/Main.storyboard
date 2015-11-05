@@ -1,25 +1,122 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="T2O-i6-ujr">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Root View Controller-->
+        <scene sceneID="qzG-gv-9RD">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ParentsViewController" id="mv1-Z9-oFb" customClass="ParentsViewController" customModule="DemoCloudKitParents" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xyc-Ot-8Z3">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cfE-KR-R7f">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cfE-KR-R7f" id="ca2-YX-8kf">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="mv1-Z9-oFb" id="PNI-wf-dPK"/>
+                            <outlet property="delegate" destination="mv1-Z9-oFb" id="noR-9l-6N9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="2Pf-Fc-YuX"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="addBarButtonItem" destination="gxa-gk-Daa" id="ypi-Zx-7gQ"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nvI-c9-eHb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <barButtonItem systemItem="add" id="gxa-gk-Daa">
+                    <connections>
+                        <action selector="createParentTapped:" destination="mv1-Z9-oFb" id="CKw-wa-MjB"/>
+                    </connections>
+                </barButtonItem>
+            </objects>
+            <point key="canvasLocation" x="1390" y="-345"/>
+        </scene>
+        <!--Parent Detail View Controller-->
+        <scene sceneID="tZZ-WH-RT3">
+            <objects>
+                <viewController storyboardIdentifier="ParentDetailViewController" id="e3D-9h-4Gv" customClass="ParentDetailViewController" customModule="DemoCloudKitParents" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="3Kr-Dz-sqg"/>
+                        <viewControllerLayoutGuide type="bottom" id="4U7-wr-Yxs"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="nve-wP-MIO">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Eh-Md-Hph" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2060" y="-1029"/>
+        </scene>
+        <!--Add Child View Controller-->
+        <scene sceneID="foF-mO-29A">
+            <objects>
+                <viewController storyboardIdentifier="AddChildViewController" id="aqn-ap-bWd" customClass="AddChildViewController" customModule="DemoCloudKitParents" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YyR-Ws-1hg"/>
+                        <viewControllerLayoutGuide type="bottom" id="kP5-dB-yeI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XtM-gu-VeE">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BH1-cc-c6I">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                <animations/>
+                            </scrollView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BH1-cc-c6I" firstAttribute="top" secondItem="YyR-Ws-1hg" secondAttribute="bottom" id="dVm-ci-Jvy"/>
+                            <constraint firstItem="BH1-cc-c6I" firstAttribute="leading" secondItem="XtM-gu-VeE" secondAttribute="leading" id="j4H-m1-xgQ"/>
+                            <constraint firstAttribute="trailing" secondItem="BH1-cc-c6I" secondAttribute="trailing" id="nCT-Di-LBw"/>
+                            <constraint firstItem="kP5-dB-yeI" firstAttribute="top" secondItem="BH1-cc-c6I" secondAttribute="bottom" id="ogI-aI-Q2n"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="saveBarButtonItem" destination="DRY-CL-0Ju" id="qUg-ZO-hAJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JXv-Ti-stD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <barButtonItem title="Save" id="DRY-CL-0Ju"/>
+            </objects>
+            <point key="canvasLocation" x="2068" y="-71"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2Qj-zg-dQl">
+            <objects>
+                <navigationController id="T2O-i6-ujr" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7V9-wn-rcw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="mv1-Z9-oFb" kind="relationship" relationship="rootViewController" id="09c-5x-CPm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0kt-QQ-Sdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="698" y="-345"/>
         </scene>
     </scenes>
 </document>

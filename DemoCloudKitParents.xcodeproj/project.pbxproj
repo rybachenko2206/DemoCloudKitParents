@@ -8,13 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		90A5E9241BEB835000F50677 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5E9231BEB835000F50677 /* AppDelegate.swift */; };
-		90A5E9261BEB835000F50677 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5E9251BEB835000F50677 /* ViewController.swift */; };
 		90A5E9291BEB835000F50677 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A5E9271BEB835000F50677 /* Main.storyboard */; };
 		90A5E92C1BEB835000F50677 /* DemoCloudKitParents.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 90A5E92A1BEB835000F50677 /* DemoCloudKitParents.xcdatamodeld */; };
 		90A5E92E1BEB835000F50677 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90A5E92D1BEB835000F50677 /* Assets.xcassets */; };
 		90A5E9311BEB835000F50677 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A5E92F1BEB835000F50677 /* LaunchScreen.storyboard */; };
 		90A5E93C1BEB835000F50677 /* DemoCloudKitParentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5E93B1BEB835000F50677 /* DemoCloudKitParentsTests.swift */; };
 		90A5E9471BEB835000F50677 /* DemoCloudKitParentsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5E9461BEB835000F50677 /* DemoCloudKitParentsUITests.swift */; };
+		90A5E95B1BEB84EC00F50677 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90A5E95A1BEB84EC00F50677 /* CloudKit.framework */; };
+		90A5E9601BEB862700F50677 /* ParentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5E95F1BEB862700F50677 /* ParentsViewController.swift */; };
+		90A5E9621BEB866200F50677 /* ParentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5E9611BEB866200F50677 /* ParentDetailViewController.swift */; };
+		90A5E9641BEB868400F50677 /* AddChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5E9631BEB868400F50677 /* AddChildViewController.swift */; };
+		90A5E9691BEB95A100F50677 /* CDChild+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5E9651BEB95A100F50677 /* CDChild+CoreDataProperties.swift */; };
+		90A5E96A1BEB95A100F50677 /* CDChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5E9661BEB95A100F50677 /* CDChild.swift */; };
+		90A5E96B1BEB95A100F50677 /* CDParent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5E9671BEB95A100F50677 /* CDParent+CoreDataProperties.swift */; };
+		90A5E96C1BEB95A100F50677 /* CDParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5E9681BEB95A100F50677 /* CDParent.swift */; };
+		90A5E96E1BEB99A100F50677 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5E96D1BEB99A100F50677 /* CoreDataManager.swift */; };
+		90A5E9701BEBA03F00F50677 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90A5E96F1BEBA03F00F50677 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +46,6 @@
 /* Begin PBXFileReference section */
 		90A5E9201BEB835000F50677 /* DemoCloudKitParents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoCloudKitParents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90A5E9231BEB835000F50677 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		90A5E9251BEB835000F50677 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		90A5E9281BEB835000F50677 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		90A5E92B1BEB835000F50677 /* DemoCloudKitParents.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DemoCloudKitParents.xcdatamodel; sourceTree = "<group>"; };
 		90A5E92D1BEB835000F50677 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +57,17 @@
 		90A5E9421BEB835000F50677 /* DemoCloudKitParentsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoCloudKitParentsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		90A5E9461BEB835000F50677 /* DemoCloudKitParentsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoCloudKitParentsUITests.swift; sourceTree = "<group>"; };
 		90A5E9481BEB835000F50677 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90A5E9591BEB84D800F50677 /* DemoCloudKitParents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DemoCloudKitParents.entitlements; sourceTree = "<group>"; };
+		90A5E95A1BEB84EC00F50677 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		90A5E95F1BEB862700F50677 /* ParentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParentsViewController.swift; path = ViewControllers/ParentsViewController.swift; sourceTree = "<group>"; };
+		90A5E9611BEB866200F50677 /* ParentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParentDetailViewController.swift; path = ViewControllers/ParentDetailViewController.swift; sourceTree = "<group>"; };
+		90A5E9631BEB868400F50677 /* AddChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddChildViewController.swift; path = ViewControllers/AddChildViewController.swift; sourceTree = "<group>"; };
+		90A5E9651BEB95A100F50677 /* CDChild+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CDChild+CoreDataProperties.swift"; path = "Models/CDObjects/CDChild+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		90A5E9661BEB95A100F50677 /* CDChild.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDChild.swift; path = Models/CDObjects/CDChild.swift; sourceTree = "<group>"; };
+		90A5E9671BEB95A100F50677 /* CDParent+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CDParent+CoreDataProperties.swift"; path = "Models/CDObjects/CDParent+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		90A5E9681BEB95A100F50677 /* CDParent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDParent.swift; path = Models/CDObjects/CDParent.swift; sourceTree = "<group>"; };
+		90A5E96D1BEB99A100F50677 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataManager.swift; path = Models/Managers/CoreDataManager.swift; sourceTree = "<group>"; };
+		90A5E96F1BEBA03F00F50677 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90A5E9701BEBA03F00F50677 /* CoreData.framework in Frameworks */,
+				90A5E95B1BEB84EC00F50677 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,13 +120,9 @@
 		90A5E9221BEB835000F50677 /* DemoCloudKitParents */ = {
 			isa = PBXGroup;
 			children = (
-				90A5E9231BEB835000F50677 /* AppDelegate.swift */,
-				90A5E9251BEB835000F50677 /* ViewController.swift */,
-				90A5E9271BEB835000F50677 /* Main.storyboard */,
-				90A5E92D1BEB835000F50677 /* Assets.xcassets */,
-				90A5E92F1BEB835000F50677 /* LaunchScreen.storyboard */,
-				90A5E9321BEB835000F50677 /* Info.plist */,
-				90A5E92A1BEB835000F50677 /* DemoCloudKitParents.xcdatamodeld */,
+				90A5E9541BEB836500F50677 /* Classes */,
+				90A5E9551BEB837900F50677 /* Resources */,
+				90A5E95C1BEB853400F50677 /* Frameworks */,
 			);
 			path = DemoCloudKitParents;
 			sourceTree = "<group>";
@@ -126,6 +143,84 @@
 				90A5E9481BEB835000F50677 /* Info.plist */,
 			);
 			path = DemoCloudKitParentsUITests;
+			sourceTree = "<group>";
+		};
+		90A5E9541BEB836500F50677 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				90A5E9231BEB835000F50677 /* AppDelegate.swift */,
+				90A5E9561BEB839B00F50677 /* Models */,
+				90A5E9571BEB83A500F50677 /* Views */,
+				90A5E9581BEB83B300F50677 /* ViewControllers */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		90A5E9551BEB837900F50677 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				90A5E9271BEB835000F50677 /* Main.storyboard */,
+				90A5E92D1BEB835000F50677 /* Assets.xcassets */,
+				90A5E92F1BEB835000F50677 /* LaunchScreen.storyboard */,
+				90A5E9321BEB835000F50677 /* Info.plist */,
+				90A5E92A1BEB835000F50677 /* DemoCloudKitParents.xcdatamodeld */,
+				90A5E9591BEB84D800F50677 /* DemoCloudKitParents.entitlements */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		90A5E9561BEB839B00F50677 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				90A5E95E1BEB859300F50677 /* CDModels */,
+				90A5E95D1BEB858A00F50677 /* Managers */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		90A5E9571BEB83A500F50677 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		90A5E9581BEB83B300F50677 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				90A5E95F1BEB862700F50677 /* ParentsViewController.swift */,
+				90A5E9611BEB866200F50677 /* ParentDetailViewController.swift */,
+				90A5E9631BEB868400F50677 /* AddChildViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		90A5E95C1BEB853400F50677 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90A5E96F1BEBA03F00F50677 /* CoreData.framework */,
+				90A5E95A1BEB84EC00F50677 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		90A5E95D1BEB858A00F50677 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				90A5E96D1BEB99A100F50677 /* CoreDataManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		90A5E95E1BEB859300F50677 /* CDModels */ = {
+			isa = PBXGroup;
+			children = (
+				90A5E9651BEB95A100F50677 /* CDChild+CoreDataProperties.swift */,
+				90A5E9661BEB95A100F50677 /* CDChild.swift */,
+				90A5E9671BEB95A100F50677 /* CDParent+CoreDataProperties.swift */,
+				90A5E9681BEB95A100F50677 /* CDParent.swift */,
+			);
+			name = CDModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +291,12 @@
 				TargetAttributes = {
 					90A5E91F1BEB835000F50677 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 5DCZ5676RM;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					90A5E9361BEB835000F50677 = {
 						CreatedOnToolsVersion = 7.1;
@@ -259,9 +360,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90A5E9261BEB835000F50677 /* ViewController.swift in Sources */,
+				90A5E96B1BEB95A100F50677 /* CDParent+CoreDataProperties.swift in Sources */,
+				90A5E96A1BEB95A100F50677 /* CDChild.swift in Sources */,
+				90A5E9641BEB868400F50677 /* AddChildViewController.swift in Sources */,
 				90A5E92C1BEB835000F50677 /* DemoCloudKitParents.xcdatamodeld in Sources */,
+				90A5E9691BEB95A100F50677 /* CDChild+CoreDataProperties.swift in Sources */,
+				90A5E9601BEB862700F50677 /* ParentsViewController.swift in Sources */,
+				90A5E9621BEB866200F50677 /* ParentDetailViewController.swift in Sources */,
 				90A5E9241BEB835000F50677 /* AppDelegate.swift in Sources */,
+				90A5E96E1BEB99A100F50677 /* CoreDataManager.swift in Sources */,
+				90A5E96C1BEB95A100F50677 /* CDParent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,10 +511,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DemoCloudKitParents/DemoCloudKitParents.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DemoCloudKitParents/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.RomahaProduction.DemoCloudKitParents;
+				PRODUCT_BUNDLE_IDENTIFIER = com.grossum.CloudKitDemo2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -414,10 +527,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DemoCloudKitParents/DemoCloudKitParents.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DemoCloudKitParents/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.RomahaProduction.DemoCloudKitParents;
+				PRODUCT_BUNDLE_IDENTIFIER = com.grossum.CloudKitDemo2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
