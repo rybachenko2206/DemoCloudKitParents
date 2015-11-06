@@ -39,6 +39,10 @@ class ParentsViewController: UITableViewController {
     // MARK: Action functions
     
     @IBAction func createParentTapped(sender: AnyObject) {
+        let createParentVC = self.storyboard?.instantiateViewControllerWithIdentifier("AddChildViewController") as! AddChildViewController
+        createParentVC.isAddChild = false
+        self.presentViewController(createParentVC, animated: true, completion: nil)
+//        self.navigationController!.pushViewController(createParentVC, animated: true)
     }
     
     
