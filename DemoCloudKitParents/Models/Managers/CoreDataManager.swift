@@ -60,10 +60,21 @@ class CoreDataManager {
         return managedObjectContext
     }()
     
+    
     // MARK: - Interface functions
     
-    func getAllParents () -> Array<CDParent>? {
-        let parents: Array<CDParent>? = nil
+    func fetchAllParents () -> Array <CDParent> {
+        var parents: Array = [CDParent]()
+        
+        let entityDescr = NSEntityDescription.entityForName(String(CDParent), inManagedObjectContext: managedObjectContext)
+        let fetchRequest = NSFetchRequest(entityName: String(CDParent))
+        fetchRequest.entity = entityDescr
+        
+        do {
+            parents = try managedObjectContext.executeFetchRequest(fetchRequest) as! [CDParent]
+        } catch let error as NSError {
+            print("\n\n--- error = \(error)")
+        }
         
         return parents
     }

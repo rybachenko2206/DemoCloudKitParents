@@ -16,6 +16,8 @@ class ParentsViewController: UITableViewController {
     //MARK: Outlets
     @IBOutlet var addBarButtonItem: UIBarButtonItem!
     
+    var parents: Array <CDParent>  = [CDParent]()
+    
     
     //MARK: Properties
 //    var parents
@@ -28,6 +30,14 @@ class ParentsViewController: UITableViewController {
         self.title = "Parents"
         
         self.navigationItem.rightBarButtonItem = self.addBarButtonItem
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        parents = CoreDataManager.sharedInstance.fetchAllParents()
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,34 +52,38 @@ class ParentsViewController: UITableViewController {
         let createParentVC = self.storyboard?.instantiateViewControllerWithIdentifier("AddChildViewController") as! AddChildViewController
         createParentVC.isAddChild = false
         self.presentViewController(createParentVC, animated: true, completion: nil)
-//        self.navigationController!.pushViewController(createParentVC, animated: true)
     }
     
     
 
     // MARK: Delegated functions:
+    
     // MARK: -UITableViewDataSource
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return parents.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(ParentsCell.cellIdentifier(), forIndexPath: indexPath) as! ParentsCell
+        
+        let parent = parents[indexPath.row]
+        cell.setParent(parent)
 
         return cell
     }
-    */
-
+    
+    
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return ParentsCell.cellHeight()
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

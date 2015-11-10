@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Root View Controller-->
@@ -15,15 +16,87 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cfE-KR-R7f">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ParentsCell" rowHeight="80" id="cfE-KR-R7f" customClass="ParentsCell" customModule="DemoCloudKitParents" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cfE-KR-R7f" id="ca2-YX-8kf">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ogv-5W-xeM" customClass="RoundedImageView" customModule="DemoCloudKitParents" customModuleProvider="target">
+                                            <rect key="frame" x="13" y="6" width="68" height="68"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="68" id="CBs-AO-urZ"/>
+                                                <constraint firstAttribute="height" constant="68" id="UX4-Ir-Eic"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="first &amp; last name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yjk-WD-EQW">
+                                            <rect key="frame" x="89" y="10" width="472" height="36"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="36" id="Ba5-Q0-5qB"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthdate: 20.12.1975" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLV-At-bWG">
+                                            <rect key="frame" x="89" y="52" width="152" height="17"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="17" id="8Kc-Sh-zle"/>
+                                                <constraint firstAttribute="width" constant="152" id="FJF-FI-FWR"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count children" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3I-LW-6Mo">
+                                            <rect key="frame" x="412" y="52" width="149" height="20"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="149" id="gIU-IC-xIk"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cht_disclosureIndicator" translatesAutoresizingMaskIntoConstraints="NO" id="WXq-eZ-zpB">
+                                            <rect key="frame" x="569" y="31" width="10" height="17"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="10" id="HBs-Gd-qN6"/>
+                                                <constraint firstAttribute="height" constant="17" id="cHY-lw-O9k"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstItem="oLV-At-bWG" firstAttribute="top" secondItem="Yjk-WD-EQW" secondAttribute="bottom" constant="6" id="IEl-5E-OXL"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="s3I-LW-6Mo" secondAttribute="bottom" constant="-1" id="LJe-PZ-fGE"/>
+                                        <constraint firstItem="s3I-LW-6Mo" firstAttribute="trailing" secondItem="Yjk-WD-EQW" secondAttribute="trailing" id="LJv-3O-leQ"/>
+                                        <constraint firstItem="ogv-5W-xeM" firstAttribute="leading" secondItem="ca2-YX-8kf" secondAttribute="leading" constant="13" id="Okh-4m-Svz"/>
+                                        <constraint firstAttribute="trailing" secondItem="WXq-eZ-zpB" secondAttribute="trailing" constant="21" id="ZuJ-fa-Tik"/>
+                                        <constraint firstItem="WXq-eZ-zpB" firstAttribute="leading" secondItem="Yjk-WD-EQW" secondAttribute="trailing" constant="8" id="b8J-Co-AdG"/>
+                                        <constraint firstItem="ogv-5W-xeM" firstAttribute="centerY" secondItem="ca2-YX-8kf" secondAttribute="centerY" id="eKu-id-fO7"/>
+                                        <constraint firstItem="Yjk-WD-EQW" firstAttribute="top" secondItem="ca2-YX-8kf" secondAttribute="topMargin" constant="2" id="nC2-fw-B3z"/>
+                                        <constraint firstAttribute="bottom" secondItem="oLV-At-bWG" secondAttribute="bottom" constant="10" id="nDs-Vn-L96"/>
+                                        <constraint firstItem="s3I-LW-6Mo" firstAttribute="top" secondItem="oLV-At-bWG" secondAttribute="top" id="nTK-V9-8ns"/>
+                                        <constraint firstItem="oLV-At-bWG" firstAttribute="leading" secondItem="ogv-5W-xeM" secondAttribute="trailing" constant="8" id="pzO-7b-6g9"/>
+                                        <constraint firstItem="oLV-At-bWG" firstAttribute="top" secondItem="Yjk-WD-EQW" secondAttribute="bottom" constant="6" id="tEc-6I-Iwv"/>
+                                        <constraint firstItem="WXq-eZ-zpB" firstAttribute="centerY" secondItem="ca2-YX-8kf" secondAttribute="centerY" id="uIy-r0-NUp"/>
+                                        <constraint firstItem="Yjk-WD-EQW" firstAttribute="leading" secondItem="ogv-5W-xeM" secondAttribute="trailing" constant="8" id="y5x-XD-fKB"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <color key="backgroundColor" red="0.97167574932131018" green="1" blue="0.44525303298458319" alpha="0.25344827586206897" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="avatarImageView" destination="ogv-5W-xeM" id="7H5-xp-JYR"/>
+                                    <outlet property="birthdayLabel" destination="oLV-At-bWG" id="LMV-wD-N9M"/>
+                                    <outlet property="childrenCountLabel" destination="s3I-LW-6Mo" id="R2a-CV-yCK"/>
+                                    <outlet property="nameLabel" destination="Yjk-WD-EQW" id="7Di-BK-Rh3"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -249,6 +322,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addChildBarButtonItem" destination="v2e-Xn-dp5" id="zFx-q5-kNE"/>
                         <outlet property="avatarImageView" destination="eKb-8F-Ui4" id="6As-KT-0rG"/>
                         <outlet property="biographyTV" destination="mMT-E3-jeO" id="Pfl-k4-p4i"/>
                         <outlet property="birthdayTF" destination="Pl6-mL-a66" id="lM5-Tu-jN8"/>
@@ -261,6 +335,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JXv-Ti-stD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <barButtonItem title="Add Child" id="v2e-Xn-dp5">
+                    <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="addChildTapped:" destination="aqn-ap-bWd" id="7wu-fp-ot3"/>
+                    </connections>
+                </barButtonItem>
                 <tapGestureRecognizer id="ilY-HM-Kg0">
                     <connections>
                         <action selector="avatarImageTapped:" destination="aqn-ap-bWd" id="ccd-sU-Pjf"/>
@@ -288,6 +368,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cht_disclosureIndicator" width="10" height="17"/>
         <image name="cht_emptyAvatar_image" width="50" height="50"/>
     </resources>
 </document>

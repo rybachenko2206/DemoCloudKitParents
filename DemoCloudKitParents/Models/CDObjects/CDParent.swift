@@ -12,6 +12,11 @@ import CoreData
 
 class CDParent: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
+    internal class func createInContext (context: NSManagedObjectContext) -> CDParent {
+        let entityDescr = NSEntityDescription.entityForName(String(CDParent), inManagedObjectContext: context)
+        let newParent = CDParent.init(entity: entityDescr!, insertIntoManagedObjectContext: context)
+        
+        return newParent
+    }
 
 }

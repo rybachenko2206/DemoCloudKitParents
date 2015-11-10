@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		90767F3A1BF0A355005BD4BB /* SharedDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90767F391BF0A355005BD4BB /* SharedDateFormatter.swift */; };
+		90767F3C1BF0CAD9005BD4BB /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90767F3B1BF0CAD9005BD4BB /* ImageManager.swift */; };
 		90A5E9241BEB835000F50677 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5E9231BEB835000F50677 /* AppDelegate.swift */; };
 		90A5E9291BEB835000F50677 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A5E9271BEB835000F50677 /* Main.storyboard */; };
 		90A5E92C1BEB835000F50677 /* DemoCloudKitParents.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 90A5E92A1BEB835000F50677 /* DemoCloudKitParents.xcdatamodeld */; };
@@ -24,6 +26,7 @@
 		90A5E96C1BEB95A100F50677 /* CDParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5E9681BEB95A100F50677 /* CDParent.swift */; };
 		90A5E96E1BEB99A100F50677 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5E96D1BEB99A100F50677 /* CoreDataManager.swift */; };
 		90A5E9701BEBA03F00F50677 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90A5E96F1BEBA03F00F50677 /* CoreData.framework */; };
+		90BCD13C1BF1D259007FDC01 /* ParentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BCD13B1BF1D259007FDC01 /* ParentsCell.swift */; };
 		90F4A16A1BECDAD1002745A3 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F4A1691BECDAD1002745A3 /* RoundedImageView.swift */; };
 		9192EF2D1EAAA6341089D9A9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2378226DE612BAD39F89E2D /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -47,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		7CCFD3740E57B2B2BD33B9C4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		90767F391BF0A355005BD4BB /* SharedDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SharedDateFormatter.swift; path = Models/Managers/SharedDateFormatter.swift; sourceTree = "<group>"; };
+		90767F3B1BF0CAD9005BD4BB /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageManager.swift; path = Models/Managers/ImageManager.swift; sourceTree = "<group>"; };
 		90A5E9201BEB835000F50677 /* DemoCloudKitParents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoCloudKitParents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90A5E9231BEB835000F50677 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90A5E9281BEB835000F50677 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,6 +76,7 @@
 		90A5E9681BEB95A100F50677 /* CDParent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDParent.swift; path = Models/CDObjects/CDParent.swift; sourceTree = "<group>"; };
 		90A5E96D1BEB99A100F50677 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataManager.swift; path = Models/Managers/CoreDataManager.swift; sourceTree = "<group>"; };
 		90A5E96F1BEBA03F00F50677 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		90BCD13B1BF1D259007FDC01 /* ParentsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParentsCell.swift; path = Views/ParentsCell.swift; sourceTree = "<group>"; };
 		90F4A1621BECA9A4002745A3 /* DemoCloudKitParents-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DemoCloudKitParents-Bridging-Header.h"; sourceTree = "<group>"; };
 		90F4A1691BECDAD1002745A3 /* RoundedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedImageView.swift; path = Views/RoundedImageView.swift; sourceTree = "<group>"; };
 		9FB8BD15C17906DD7E0BF28A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -193,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				90F4A1691BECDAD1002745A3 /* RoundedImageView.swift */,
+				90BCD13B1BF1D259007FDC01 /* ParentsCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -220,6 +227,8 @@
 			isa = PBXGroup;
 			children = (
 				90A5E96D1BEB99A100F50677 /* CoreDataManager.swift */,
+				90767F391BF0A355005BD4BB /* SharedDateFormatter.swift */,
+				90767F3B1BF0CAD9005BD4BB /* ImageManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -441,7 +450,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				90A5E96B1BEB95A100F50677 /* CDParent+CoreDataProperties.swift in Sources */,
+				90767F3A1BF0A355005BD4BB /* SharedDateFormatter.swift in Sources */,
 				90A5E96A1BEB95A100F50677 /* CDChild.swift in Sources */,
+				90BCD13C1BF1D259007FDC01 /* ParentsCell.swift in Sources */,
 				90A5E9641BEB868400F50677 /* AddChildViewController.swift in Sources */,
 				90A5E92C1BEB835000F50677 /* DemoCloudKitParents.xcdatamodeld in Sources */,
 				90A5E9691BEB95A100F50677 /* CDChild+CoreDataProperties.swift in Sources */,
@@ -451,6 +462,7 @@
 				90F4A16A1BECDAD1002745A3 /* RoundedImageView.swift in Sources */,
 				90A5E96E1BEB99A100F50677 /* CoreDataManager.swift in Sources */,
 				90A5E96C1BEB95A100F50677 /* CDParent.swift in Sources */,
+				90767F3C1BF0CAD9005BD4BB /* ImageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

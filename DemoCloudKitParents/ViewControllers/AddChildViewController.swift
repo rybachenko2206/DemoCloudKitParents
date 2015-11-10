@@ -8,6 +8,12 @@
 
 import UIKit
 
+enum Gender: Int16 {
+    case Male = 0
+    case Female
+    case Pervert
+}
+
 
 class AddChildViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -24,14 +30,14 @@ class AddChildViewController: UIViewController, UITextFieldDelegate, UITextViewD
     @IBOutlet weak var genderSegmentControl: UISegmentedControl!
     
     @IBOutlet var saveBarButtonItem: UIBarButtonItem!
+    @IBOutlet var addChildBarButtonItem: UIBarButtonItem!
     
     @IBOutlet weak var scrollView: TPKeyboardAvoidingScrollView!
     
     
     //MARK: Properties
     var isAddChild: Bool!
-    var imageURL: NSURL?
-    let tempImageName = "temp_image.jpg"
+    let startBirthdayDate: Double = -946771200 //01.01.1940
     
 
     //MARK: Overriden functions
@@ -43,10 +49,11 @@ class AddChildViewController: UIViewController, UITextFieldDelegate, UITextViewD
         professionTF.hidden = isAddChild
         
         biographyTV.delegate = self
-        birthdayTF.delegate = self
         firstNameTF.delegate = self
         lastNameTF.delegate = self
         professionTF.delegate = self
+        birthdayTF.delegate = self
+        setDatePickerToBirthdayTF()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -54,14 +61,59 @@ class AddChildViewController: UIViewController, UITextFieldDelegate, UITextViewD
         
     }
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesBegan(touches, withEvent: event)
+        self.view.endEditing(true)
+    }
+    
 
     //MARK: Action functions
+    
+    @IBAction func addChildTapped(sender: AnyObject) {
+        
+    }
     
     @IBAction func close(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func savePerson(sender: AnyObject) {
+        if !canCreateEntity() {
+            showAlertView("", message: "Fill required text fuilds to create person", cancelButtonTitle: "OK")
+            return;
+        }
+        
+        if isAddChild == true {
+            
+        } else {
+            let parent = CDParent.createInContext(CoreDataManager.sharedInstance.managedObjectContext) as CDParent
+            parent.firstName = firstNameTF.text
+            parent.lastName = lastNameTF.text
+            parent.birthday = SharedDateFormatter.sharedInstance.dateFromString(birthdayTF.text!, dateFormat: SharedDateFormatter.sharedInstance.birthdayUkraineDateFormat)
+            parent.profession = professionTF.text
+            parent.gender = Int16.init(genderSegmentControl.selectedSegmentIndex)
+            parent.notes = biographyTV.text
+            
+            let avatarImage: UIImage = (avatarImageView.image != nil ? avatarImageView.image : UIImage(named: "cht_emptyAvatar_image"))!
+            
+  
+            let timestampDate: NSTimeInterval = NSDate().timeIntervalSince1970
+            let imageName = String(timestampDate)
+            parent.imageName = imageName
+            
+            ImageManager.sharedInstanse.saveImage(avatarImage, imageName: imageName)
+            
+            
+            let alertView = UIAlertController(title: "Success", message: "New parent \(parent.firstName) \(parent.lastName)", preferredStyle: UIAlertControllerStyle.Alert)
+            alertView.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: {( action: UIAlertAction) -> Void in
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }))
+            presentViewController(alertView, animated: true, completion: nil)
+        }
+        CoreDataManager.sharedInstance.saveContext()
+        
+        
+        
     }
 
     @IBAction func setGender(sender: AnyObject) {
@@ -69,6 +121,8 @@ class AddChildViewController: UIViewController, UITextFieldDelegate, UITextViewD
     
     @IBAction func avatarImageTapped(sender: AnyObject) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum) {
+            self.view.endEditing(true)
+            
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
@@ -77,6 +131,11 @@ class AddChildViewController: UIViewController, UITextFieldDelegate, UITextViewD
             presentViewController(imagePicker, animated: true, completion: nil)
         }
     }
+    
+    func birthdayValueChanged(sender: UIDatePicker) {
+        birthdayTF.text = SharedDateFormatter.sharedInstance.stringFromDate(sender.date, dateFormat: SharedDateFormatter.sharedInstance.birthdayUkraineDateFormat)
+    }
+    
     
     //MARK: Delegate functions:
     
@@ -107,34 +166,41 @@ class AddChildViewController: UIViewController, UITextFieldDelegate, UITextViewD
         
         let image = info[UIImagePickerControllerOriginalImage] as? UIImage
         avatarImageView.image = image
-        if image != nil {
-            saveImageLocally(image)
-        } else {
-            saveImageLocally(UIImage(named: "cht_emptyAvatar_image"))
-        }
-        
         
         dismissViewControllerAnimated(true, completion: nil)
     }
     
     
     // MARK: Private functions
-    private func saveImageLocally(image: UIImage!) {
-        let imageData: NSData = UIImageJPEGRepresentation(avatarImageView.image!, 0.8)!
-        let pathToDocumentsDir: NSString =  pathToDocumentsDirectory()
-        let path = pathToDocumentsDir.stringByAppendingPathComponent(tempImageName)
-        
-        imageURL = NSURL(fileURLWithPath: path)
-        if imageURL != nil {
-            if imageData.writeToURL(imageURL!, atomically: false) == false {
-                print("---Error!! WriteToURL iamge == false")
-            }
-        }
-        
-    }
     
     private func pathToDocumentsDirectory() -> NSString {
         return NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString as NSString
+    }
+    
+    private func canCreateEntity () -> Bool {
+        if firstNameTF.text?.isEmpty == true ||
+            lastNameTF.text?.isEmpty == true ||
+            birthdayTF.text?.isEmpty == true {
+            return false
+        }
+        return true
+    }
+    
+    private func setDatePickerToBirthdayTF () {
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = UIDatePickerMode.Date
+        datePicker.minimumDate = NSDate(timeIntervalSince1970: startBirthdayDate)
+        datePicker.maximumDate = NSDate()
+        datePicker.addTarget(self, action: Selector("birthdayValueChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+        birthdayTF.inputView = datePicker
+    }
+    
+    private func showAlertView(title: String, message: String, cancelButtonTitle: String) {
+        let alertView = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alertView.addAction(UIAlertAction(title: cancelButtonTitle, style: UIAlertActionStyle.Cancel, handler: {( action: UIAlertAction) -> Void in
+            
+        }))
+        presentViewController(alertView, animated: true, completion: nil)
     }
     
 }

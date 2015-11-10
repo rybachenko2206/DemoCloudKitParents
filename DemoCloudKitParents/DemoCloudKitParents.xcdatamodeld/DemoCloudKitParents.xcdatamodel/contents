@@ -13,13 +13,13 @@
         <attribute name="birthday" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="gender" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="pathToAvatar" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CDParent" positionX="-63" positionY="-18" width="128" height="88"/>
         <element name="CDChild" positionX="-351" positionY="222" width="128" height="73"/>
-        <element name="CDPerson" positionX="-351" positionY="-45" width="128" height="133"/>
+        <element name="CDParent" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="CDPerson" positionX="-351" positionY="-45" width="128" height="135"/>
     </elements>
 </model>

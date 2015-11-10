@@ -17,5 +17,12 @@ extension CDParent {
     @NSManaged var profession: String?
     @NSManaged var children: NSSet?
     @NSManaged var pair: CDParent?
+    
+    @NSManaged var birthday: NSDate?
+    @NSManaged var firstName: String?
+    @NSManaged var lastName: String?
+    @NSManaged var gender: Int16
+    @NSManaged var notes: String?
+    @NSManaged var imageName: String?
 
 }
