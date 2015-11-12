@@ -18,5 +18,28 @@ class CDChild: NSManagedObject {
         
         return newChild
     }
-
+    
+    
+    // MARK: Interface functions
+    
+    func addParentObject(value: CDParent) {
+        self.mutableSetValueForKey("parents").addObject(value)
+    }
+    
+    func getParentsInfo() -> String {
+        var parentsInfoStr: String = "Parents:\n"
+        
+        if self.parents?.count == 0 {
+            parentsInfoStr = "Orphan"
+        } else {
+            for parent in self.parents! {
+                parentsInfoStr = parentsInfoStr + "\(parent.firstName!) \(parent.lastName!)\n"
+            }
+        }
+        
+        return parentsInfoStr
+    }
+    
+    
 }
+

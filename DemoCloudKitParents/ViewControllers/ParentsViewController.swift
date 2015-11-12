@@ -11,16 +11,23 @@ import CloudKit
 import CoreData
 
 
+protocol ParentsViewControllerDelegate {
+    func didSelectPerson(person: CDParent)
+}
+
+
 class ParentsViewController: UITableViewController {
     
     //MARK: Outlets
     @IBOutlet var addBarButtonItem: UIBarButtonItem!
+    @IBOutlet weak var allChildrenBarButtonItem: UIBarButtonItem!
     
-    var parents: Array <CDParent>  = [CDParent]()
     
     
     //MARK: Properties
-//    var parents
+    var parents: Array <CDParent>  = [CDParent]()
+    var ignoreParent: CDParent?
+    var delegate: ParentsViewControllerDelegate?
     
     
     //MARK: Overriden functions
@@ -37,6 +44,12 @@ class ParentsViewController: UITableViewController {
         super.viewWillAppear(animated)
         
         parents = CoreDataManager.sharedInstance.fetchAllParents()
+        if ignoreParent != nil && parents.count > 0 {
+            if let index = parents.indexOf(ignoreParent!) {
+                parents.removeAtIndex(index)
+            }
+        }
+        
         tableView.reloadData()
     }
 
@@ -48,15 +61,24 @@ class ParentsViewController: UITableViewController {
     
     // MARK: Action functions
     
+    @IBAction func allChildrenTapped(sender: AnyObject) {
+        let allChildrenVC = self.storyboard?.instantiateViewControllerWithIdentifier("ChildrenListViewController") as! ChildrenListViewController
+        allChildrenVC.children = CoreDataManager.sharedInstance.fetchAllChildtren()
+        
+        self.navigationController?.pushViewController(allChildrenVC, animated: true)
+    }
+    
     @IBAction func createParentTapped(sender: AnyObject) {
         let createParentVC = self.storyboard?.instantiateViewControllerWithIdentifier("AddChildViewController") as! AddChildViewController
         createParentVC.isAddChild = false
-        self.presentViewController(createParentVC, animated: true, completion: nil)
+        
+        let navController = UINavigationController.init(rootViewController: createParentVC)
+        self.presentViewController(navController, animated: true, completion: nil)
     }
     
     
 
-    // MARK: Delegated functions:
+    // MARK: Delegate functions:
     
     // MARK: -UITableViewDataSource
 
@@ -80,53 +102,29 @@ class ParentsViewController: UITableViewController {
     }
     
     
+    // MARK: -UITableViewDelegate
+    
     override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return ParentsCell.cellHeight()
     }
     
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        let parent = parents[indexPath.row]
+        if self.modalPresentationStyle == UIModalPresentationStyle.Popover {
+            self.delegate?.didSelectPerson(parent)
+            self.dismissViewControllerAnimated(true, completion: nil)
+            return
+        }
+        
+        
+        let showParentVC = self.storyboard?.instantiateViewControllerWithIdentifier("AddChildViewController") as! AddChildViewController
+        showParentVC.isAddChild = false
+        showParentVC.parent = parent
+        
+        self.navigationController?.pushViewController(showParentVC, animated: true)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    
 }

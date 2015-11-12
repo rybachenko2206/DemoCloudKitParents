@@ -17,7 +17,7 @@ extension CDChild {
     @NSManaged var friends: NSSet?
     @NSManaged var parents: NSSet?
     
-    @NSManaged var birthday: String?
+    @NSManaged var birthday: NSDate?
     @NSManaged var firstName: String?
     @NSManaged var lastName: String?
     @NSManaged var gender: Int16

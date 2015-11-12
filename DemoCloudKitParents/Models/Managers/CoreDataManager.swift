@@ -79,6 +79,22 @@ class CoreDataManager {
         return parents
     }
     
+    func fetchAllChildtren() -> Array <CDChild> {
+        var children: Array = [CDChild]()
+        
+        let entityDescr = NSEntityDescription.entityForName(String(CDChild), inManagedObjectContext: managedObjectContext)
+        let fetchRequest = NSFetchRequest(entityName: String(CDChild))
+        fetchRequest.entity = entityDescr
+        
+        do {
+            children = try managedObjectContext.executeFetchRequest(fetchRequest) as! [CDChild]
+        } catch let error as NSError {
+            print("\n\n--- error = \(error)")
+        }
+        
+        return children
+    }
+    
     func saveContext () {
         if managedObjectContext.hasChanges {
             do {

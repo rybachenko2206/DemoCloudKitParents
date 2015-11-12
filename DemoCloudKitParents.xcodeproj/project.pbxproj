@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		90767F3A1BF0A355005BD4BB /* SharedDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90767F391BF0A355005BD4BB /* SharedDateFormatter.swift */; };
 		90767F3C1BF0CAD9005BD4BB /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90767F3B1BF0CAD9005BD4BB /* ImageManager.swift */; };
+		909F8F271BF49B1D00F0646E /* ChildrenListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909F8F261BF49B1D00F0646E /* ChildrenListViewController.swift */; };
+		909F8F291BF49F4100F0646E /* ChildrenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909F8F281BF49F4100F0646E /* ChildrenCell.swift */; };
 		90A5E9241BEB835000F50677 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5E9231BEB835000F50677 /* AppDelegate.swift */; };
 		90A5E9291BEB835000F50677 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A5E9271BEB835000F50677 /* Main.storyboard */; };
 		90A5E92C1BEB835000F50677 /* DemoCloudKitParents.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 90A5E92A1BEB835000F50677 /* DemoCloudKitParents.xcdatamodeld */; };
@@ -18,7 +20,6 @@
 		90A5E9471BEB835000F50677 /* DemoCloudKitParentsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5E9461BEB835000F50677 /* DemoCloudKitParentsUITests.swift */; };
 		90A5E95B1BEB84EC00F50677 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90A5E95A1BEB84EC00F50677 /* CloudKit.framework */; };
 		90A5E9601BEB862700F50677 /* ParentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5E95F1BEB862700F50677 /* ParentsViewController.swift */; };
-		90A5E9621BEB866200F50677 /* ParentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5E9611BEB866200F50677 /* ParentDetailViewController.swift */; };
 		90A5E9641BEB868400F50677 /* AddChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5E9631BEB868400F50677 /* AddChildViewController.swift */; };
 		90A5E9691BEB95A100F50677 /* CDChild+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5E9651BEB95A100F50677 /* CDChild+CoreDataProperties.swift */; };
 		90A5E96A1BEB95A100F50677 /* CDChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5E9661BEB95A100F50677 /* CDChild.swift */; };
@@ -52,6 +53,8 @@
 		7CCFD3740E57B2B2BD33B9C4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		90767F391BF0A355005BD4BB /* SharedDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SharedDateFormatter.swift; path = Models/Managers/SharedDateFormatter.swift; sourceTree = "<group>"; };
 		90767F3B1BF0CAD9005BD4BB /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageManager.swift; path = Models/Managers/ImageManager.swift; sourceTree = "<group>"; };
+		909F8F261BF49B1D00F0646E /* ChildrenListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChildrenListViewController.swift; path = ViewControllers/ChildrenListViewController.swift; sourceTree = "<group>"; };
+		909F8F281BF49F4100F0646E /* ChildrenCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChildrenCell.swift; path = Views/ChildrenCell.swift; sourceTree = "<group>"; };
 		90A5E9201BEB835000F50677 /* DemoCloudKitParents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoCloudKitParents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90A5E9231BEB835000F50677 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90A5E9281BEB835000F50677 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -68,7 +71,6 @@
 		90A5E9591BEB84D800F50677 /* DemoCloudKitParents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DemoCloudKitParents.entitlements; sourceTree = "<group>"; };
 		90A5E95A1BEB84EC00F50677 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		90A5E95F1BEB862700F50677 /* ParentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParentsViewController.swift; path = ViewControllers/ParentsViewController.swift; sourceTree = "<group>"; };
-		90A5E9611BEB866200F50677 /* ParentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParentDetailViewController.swift; path = ViewControllers/ParentDetailViewController.swift; sourceTree = "<group>"; };
 		90A5E9631BEB868400F50677 /* AddChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddChildViewController.swift; path = ViewControllers/AddChildViewController.swift; sourceTree = "<group>"; };
 		90A5E9651BEB95A100F50677 /* CDChild+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CDChild+CoreDataProperties.swift"; path = "Models/CDObjects/CDChild+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		90A5E9661BEB95A100F50677 /* CDChild.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDChild.swift; path = Models/CDObjects/CDChild.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			children = (
 				90F4A1691BECDAD1002745A3 /* RoundedImageView.swift */,
 				90BCD13B1BF1D259007FDC01 /* ParentsCell.swift */,
+				909F8F281BF49F4100F0646E /* ChildrenCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -208,8 +211,8 @@
 			isa = PBXGroup;
 			children = (
 				90A5E95F1BEB862700F50677 /* ParentsViewController.swift */,
-				90A5E9611BEB866200F50677 /* ParentDetailViewController.swift */,
 				90A5E9631BEB868400F50677 /* AddChildViewController.swift */,
+				909F8F261BF49B1D00F0646E /* ChildrenListViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				909F8F271BF49B1D00F0646E /* ChildrenListViewController.swift in Sources */,
 				90A5E96B1BEB95A100F50677 /* CDParent+CoreDataProperties.swift in Sources */,
 				90767F3A1BF0A355005BD4BB /* SharedDateFormatter.swift in Sources */,
 				90A5E96A1BEB95A100F50677 /* CDChild.swift in Sources */,
@@ -457,9 +461,9 @@
 				90A5E92C1BEB835000F50677 /* DemoCloudKitParents.xcdatamodeld in Sources */,
 				90A5E9691BEB95A100F50677 /* CDChild+CoreDataProperties.swift in Sources */,
 				90A5E9601BEB862700F50677 /* ParentsViewController.swift in Sources */,
-				90A5E9621BEB866200F50677 /* ParentDetailViewController.swift in Sources */,
 				90A5E9241BEB835000F50677 /* AppDelegate.swift in Sources */,
 				90F4A16A1BECDAD1002745A3 /* RoundedImageView.swift in Sources */,
+				909F8F291BF49F4100F0646E /* ChildrenCell.swift in Sources */,
 				90A5E96E1BEB99A100F50677 /* CoreDataManager.swift in Sources */,
 				90A5E96C1BEB95A100F50677 /* CDParent.swift in Sources */,
 				90767F3C1BF0CAD9005BD4BB /* ImageManager.swift in Sources */,
